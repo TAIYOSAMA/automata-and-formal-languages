@@ -1,0 +1,43 @@
+{
+  // 1. 保存時の自動ビルド
+  "latex-workshop.latex.autoBuild.run": "onFileChange",
+
+  // 2. 生成されるPDFをタブで横に並べてプレビュー
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  // 3. デフォルトで使うレシピの指定（←ここ！）
+  "latex-workshop.latex.recipe.default": "latexmk (lualatex)",
+
+  // 4. ビルドツール（LuaLaTeX + latexmk）の定義
+  "latex-workshop.latex.tools": [
+    {
+      "name": "latexmk (lualatex)",
+      "command": "latexmk",
+      "args": [
+        "-lualatex",
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "-outdir=out",
+        "%DOC%"
+      ]
+    }
+  ],
+
+  // 5. レシピの定義
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "latexmk (lualatex)",
+      "tools": ["latexmk (lualatex)"]
+    }
+  ],
+
+  // 6. 一時ファイルのクリーンアップ対象
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux", "*.bbl", "*.blg", "*.log", "*.out", "*.toc", "*.fdb_latexmk", "*.synctex.gz"
+  ],
+  "latex-workshop.latex.autoClean.run": "onBuilt",
+
+  // 7. 出力先ディレクトリ
+  "latex-workshop.latex.outDir": "out"
+}
