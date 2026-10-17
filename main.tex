@@ -15,7 +15,7 @@
 \maketitle
 
 
-\subsection{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N} \}\)}
+\subsection{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -26,18 +26,23 @@
 	semithick,
 	inner sep=4px
 	]
+
 	\node[state, initial, initial above, accepting] (q_0) {$q_0$};
 	\node[state] (q_1) [right=of q_0] {$q_1$};
+
 	\path[->]
-	(q_0) edge [bend left] node {a} (q_1)
+	(q_0)
+	edge [bend left] node {a} (q_1)
 	edge [loop left] node {b} ()
-	(q_1) edge [bend left] node {a} (q_0)
+	(q_1)
+	edge [bend left] node {a} (q_0)
 	edge [loop right] node {b} ();
+
 \end{tikzpicture}
 
 
 
-\subsection{\( L_2 = \{w \in \Sigma ^ * \mid \langle w\rangle_b = 2k+1, k \in \mathbb{N} \}\)}
+\subsection{\( L_2 = \{w \in \Sigma ^ * \mid \langle w\rangle_b = 2k+1, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -48,18 +53,23 @@
 	semithick,
 	inner sep=4px
 	]
+
 	\node[state, initial, initial above] (q_0) {$q_0$};
 	\node[state, accepting] (q_1) [right=of q_0] {$q_1$};
+
 	\path[->]
-	(q_0) edge [bend left] node {b} (q_1)
+	(q_0)
+	edge [bend left] node {b} (q_1)
 	edge [loop left] node {a} ()
-	(q_1) edge [bend left] node {b} (q_0)
+	(q_1)
+	edge [bend left] node {b} (q_0)
 	edge [loop right] node {a} ();
+
 \end{tikzpicture}
 
 
 
-\subsection{\( L_3 = \{ w \in \Sigma ^ * \mid \langle w\rangle_a = 3k, k \in \mathbb{N} \}\)}
+\subsection{\( L_3 = \{ w \in \Sigma ^ * \mid \langle w\rangle_a = 3k, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -69,21 +79,27 @@
 	semithick,
 	inner sep=4px
 	]
+
 	\node[state, initial, initial above, accepting] (q_0) at (150:2cm) {$q_0$};
 	\node[state] (q_1) at (30:2cm) {$q_1$};
 	\node[state] (q_2) at (270:2cm) {$q_2$};
+
 	\path[->]
-	(q_0) edge node {a} (q_1)
+	(q_0)
+	edge node {a} (q_1)
 	edge [loop left] node {b} ()
-	(q_1) edge node {a} (q_2)
+	(q_1)
+	edge node {a} (q_2)
 	edge [loop right] node {b} ()
-	(q_2) edge node {a} (q_0)
+	(q_2)
+	edge node {a} (q_0)
 	edge [loop below] node {b} ();
+
 \end{tikzpicture}
 
 
 
-\subsection{\( L_4 = \{ w \in \Sigma ^ * \mid \langle w\rangle_b = 3k+2, k \in \mathbb{N} \}\)}
+\subsection{\( L_4 = \{ w \in \Sigma ^ * \mid \langle w\rangle_b = 3k+2, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -93,16 +109,150 @@
 	semithick,
 	inner sep=4px
 	]
+
 	\node[state, initial, initial above] (q_0) at (150:2cm) {$q_0$};
 	\node[state] (q_1) at (30:2cm) {$q_1$};
 	\node[state, accepting] (q_2) at (270:2cm) {$q_2$};
+
 	\path[->]
-	(q_0) edge node {b} (q_1)
+	(q_0)
+	edge node {b} (q_1)
 	edge [loop left] node {a} ()
-	(q_1) edge node {b} (q_2)
+	(q_1)
+	edge node {b} (q_2)
 	edge [loop right] node {a} ()
-	(q_2) edge node {b} (q_0)
+	(q_2)
+	edge node {b} (q_0)
 	edge [loop below] node {a} ();
+
 \end{tikzpicture}
+
+
+
+\subsection{\( L_5 = \{ w \in \Sigma ^ * \mid \lvert w\rvert = 3k, k \in \mathbb{N}\} \)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	shorten >=1px,
+	semithick,
+	inner sep=4px
+	]
+
+	\node[state, initial, initial above, accepting] (q_0) at (150:2cm) {$q_0$};
+	\node[state] (q_1) at (30:2cm) {$q_1$};
+	\node[state] (q_2) at (270:2cm) {$q_2$};
+
+	\path[->]
+	(q_0) edge node {a,b} (q_1)
+	(q_1) edge node {a,b} (q_2)
+	(q_2) edge node {a,b} (q_0);
+
+\end{tikzpicture}
+
+
+
+\subsection{\( L_6 = \{ \mathsf{aab}v \mid v \in \Sigma ^ * \}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=2cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state] (q_2) [right=of q_1] {$q_2$};
+	\node[state, accepting] (q_3) [right=of q_2] {$q_3$};
+	\node[state] (q_rej) [below=of q_1] {$q_{rej}$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge node {b} (q_rej)
+	(q_1)
+	edge node {a} (q_2)
+	edge node {b} (q_rej)
+	(q_2)
+	edge node {b} (q_3)
+	edge node {a} (q_rej)
+	(q_3)
+	edge [loop right] node {a,b} ()
+	(q_rej)
+	edge [loop below] node {a,b} ();
+
+\end{tikzpicture}
+
+
+
+\subsection{\( L_7 = \{ u\mathsf{ab} \mid u \in \Sigma ^ * \}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=2cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state, accepting] (q_2) [right=of q_1] {$q_2$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge [loop above] node {b} ()
+	(q_1)
+	edge node {b} (q_2)
+	edge [loop above] node {a} ()
+	(q_2)
+	edge [bend left] node {a} (q_1)
+	edge [bend left=45] node {b} (q_0);
+
+\end{tikzpicture}
+
+
+
+\subsection{\( L_8 = \{ u\mathsf{aaa}v \mid u,v \in \Sigma ^ * \}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=2cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state] (q_2) [right=of q_1] {$q_2$};
+	\node[state, accepting] (q_3) [right=of q_2] {$q_3$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge [loop above] node {b} ()
+	(q_1)
+	edge node {a} (q_2)
+	edge [bend left] node {b} (q_0)
+	(q_2)
+	edge node {a} (q_3)
+	edge [bend left=45] node {b} (q_0)
+	(q_3)
+	edge [loop above] node {a,b} ();
+
+\end{tikzpicture}
+
+
 
 \end{document}
