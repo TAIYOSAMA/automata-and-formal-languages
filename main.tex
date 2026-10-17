@@ -271,4 +271,101 @@
 
 
 
+\section{\( L_9 = \{ \mathsf{aab}v\mathsf{ab} \mid v \in \Sigma ^ * \}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=1cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.1,
+	transform shape
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state] (q_2) [right=of q_1] {$q_2$};
+	\node[state] (q_3) [right=of q_2] {$q_3$};
+	\node[state] (q_rej) [below=of q_1] {$q_{rej}$};
+
+	\node[state] (q_4) [right=of q_3]{$q_4$};
+	\node[state] (q_5) [right=of q_4] {$q_5$};
+	\node[state, accepting] (q_6) [right=of q_5] {$q_6$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge node {b} (q_rej)
+	(q_1)
+	edge node {a} (q_2)
+	edge node {b} (q_rej)
+	(q_2)
+	edge node {b} (q_3)
+	edge node {a} (q_rej)
+	(q_3)
+	edge node {a,b} (q_4)
+	(q_rej)
+	edge [loop below] node {a,b} ()
+
+	(q_4)
+	edge node {a} (q_5)
+	edge [loop above] node {b} ()
+	(q_5)
+	edge node {b} (q_6)
+	edge [loop above] node {a} ()
+	(q_6)
+	edge [bend left] node {a} (q_5)
+	edge [bend left=45] node {b} (q_4);
+
+\end{tikzpicture}
+
+
+
+\section{\( L_{10} = \{\mathsf{a}v\mathsf{a} \mid v \in \Sigma ^ *\} \cup \{\mathsf{b}v\mathsf{b} \mid v \in \Sigma ^ *\}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=1.5cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.2,
+	transform shape
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [above right=of q_0] {$q_1$};
+	\node[state, accepting] (q_2) [right=of q_1] {$q_2$};
+	\node[state] (q_3) [below right=of q_0] {$q_3$};
+	\node[state, accepting] (q_4) [right=of q_3] {$q_4$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge node {b} (q_3)
+	(q_1)
+	edge node {a} (q_2)
+	edge [loop above] node {b} ()
+	(q_2)
+	edge [loop above] node {a} ()
+	edge [bend left] node {b} (q_1)
+	(q_3)
+	edge node {b} (q_4)
+	edge [loop above] node {a} ()
+	(q_4)
+	edge [loop above] node {b} ()
+	edge [bend left] node {a} (q_3);
+
+\end{tikzpicture}
+
+
+
+\section{\( L_{11} = \{\mathsf{a}^i\mathsf{b}^j \mid i \ge 0, j \ge 0\}\)}
+
+
 \end{document}
