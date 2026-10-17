@@ -1,4 +1,4 @@
-\documentclass[article]{jlreq}
+\documentclass[report]{jlreq}
 \usepackage{mathtools, amssymb}
 \usepackage{tikz}
 \usetikzlibrary{automata,positioning,arrows.meta}
@@ -15,7 +15,7 @@
 \maketitle
 
 
-\subsection{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N}\} \)}
+\section{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -24,7 +24,9 @@
 	node distance=2cm,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial, initial above, accepting] (q_0) {$q_0$};
@@ -42,7 +44,7 @@
 
 
 
-\subsection{\( L_2 = \{w \in \Sigma ^ * \mid \langle w\rangle_b = 2k+1, k \in \mathbb{N}\} \)}
+\section{\( L_2 = \{w \in \Sigma ^ * \mid \langle w\rangle_b = 2k+1, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -51,7 +53,9 @@
 	node distance=2cm,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial, initial above] (q_0) {$q_0$};
@@ -69,7 +73,7 @@
 
 
 
-\subsection{\( L_3 = \{ w \in \Sigma ^ * \mid \langle w\rangle_a = 3k, k \in \mathbb{N}\} \)}
+\section{\( L_3 = \{ w \in \Sigma ^ * \mid \langle w\rangle_a = 3k, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -77,7 +81,9 @@
 	auto,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial, initial above, accepting] (q_0) at (150:2cm) {$q_0$};
@@ -99,7 +105,7 @@
 
 
 
-\subsection{\( L_4 = \{ w \in \Sigma ^ * \mid \langle w\rangle_b = 3k+2, k \in \mathbb{N}\} \)}
+\section{\( L_4 = \{ w \in \Sigma ^ * \mid \langle w\rangle_b = 3k+2, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -107,7 +113,9 @@
 	auto,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial, initial above] (q_0) at (150:2cm) {$q_0$};
@@ -129,7 +137,7 @@
 
 
 
-\subsection{\( L_5 = \{ w \in \Sigma ^ * \mid \lvert w\rvert = 3k, k \in \mathbb{N}\} \)}
+\section{\( L_5 = \{ w \in \Sigma ^ * \mid \lvert w\rvert = 3k, k \in \mathbb{N}\} \)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -137,7 +145,9 @@
 	auto,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial, initial above, accepting] (q_0) at (150:2cm) {$q_0$};
@@ -153,7 +163,7 @@
 
 
 
-\subsection{\( L_6 = \{ \mathsf{aab}v \mid v \in \Sigma ^ * \}\)}
+\section{\( L_6 = \{ \mathsf{aab}v \mid v \in \Sigma ^ * \}\)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -162,7 +172,9 @@
 	node distance=2cm,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial] (q_0) {$q_0$};
@@ -190,7 +202,7 @@
 
 
 
-\subsection{\( L_7 = \{ u\mathsf{ab} \mid u \in \Sigma ^ * \}\)}
+\section{\( L_7 = \{ u\mathsf{ab} \mid u \in \Sigma ^ * \}\)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -199,7 +211,9 @@
 	node distance=2cm,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial] (q_0) {$q_0$};
@@ -221,7 +235,7 @@
 
 
 
-\subsection{\( L_8 = \{ u\mathsf{aaa}v \mid u,v \in \Sigma ^ * \}\)}
+\section{\( L_8 = \{ u\mathsf{aaa}v \mid u,v \in \Sigma ^ * \}\)}
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -230,7 +244,9 @@
 	node distance=2cm,
 	shorten >=1px,
 	semithick,
-	inner sep=4px
+	inner sep=4px,
+	scale=1.2,
+	transform shape
 	]
 
 	\node[state, initial] (q_0) {$q_0$};
