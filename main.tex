@@ -478,7 +478,7 @@
 	edge node {a} (q_rej)
 	edge [loop right] node {b} ()
 	(q_rej)
-	edge [loop below] node {a,b} ()
+	edge [loop below] node {a,b} ();
 
 \end{tikzpicture}
 
@@ -517,7 +517,7 @@
 	(q_3)
 	edge node {a,b} (q_rej)
 	(q_rej)
-	edge [loop right] node {a,b} ()
+	edge [loop right] node {a,b} ();
 
 \end{tikzpicture}
 
@@ -556,10 +556,83 @@
 	(q_3)
 	edge node {a,b} (q_rej)
 	(q_rej)
-	edge [loop right] node {a,b} ()
+	edge [loop right] node {a,b} ();
 
 \end{tikzpicture}
 
 
+
+\section{\(L_{16} = L_1 \cap L_2\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=2cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.2,
+	transform shape
+	]
+
+	\node[state, initial] (p_0_q_0) {$p_0,q_0$};
+	\node[state] (p_0_q_1) [right=of p_0_q_0] {$p_0,q_1$};
+	\node[state, accepting] (p_1_q_0) [below=of p_0_q_0] {$p_1,q_0$};
+	\node[state] (p_1_q_1) [right=of p_1_q_0] {$p_1,q_1$};
+
+	\path[->]
+	(p_0_q_0)
+	edge [bend left] node {a} (p_0_q_1)
+	edge [bend left] node {b} (p_1_q_0)
+	(p_0_q_1)
+	edge [bend left] node {a} (p_0_q_0)
+	edge [bend left] node {b} (p_1_q_1)
+	(p_1_q_0)
+	edge [bend left] node {a} (p_1_q_1)
+	edge [bend left] node {b} (p_0_q_0)
+	(p_1_q_1)
+	edge [bend left] node {a} (p_1_q_0)
+	edge [bend left] node {b} (p_0_q_1);
+
+
+\end{tikzpicture}
+
+
+\section{\(L_{17} = L_1 \cup L_2\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=2cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.2,
+	transform shape
+	]
+
+	\node[state, initial, accepting] (p_0_q_0) {$p_0,q_0$};
+	\node[state] (p_0_q_1) [right=of p_0_q_0] {$p_0,q_1$};
+	\node[state, accepting] (p_1_q_0) [below=of p_0_q_0] {$p_1,q_0$};
+	\node[state, accepting] (p_1_q_1) [right=of p_1_q_0] {$p_1,q_1$};
+
+	\path[->]
+	(p_0_q_0)
+	edge [bend left] node {a} (p_0_q_1)
+	edge [bend left] node {b} (p_1_q_0)
+	(p_0_q_1)
+	edge [bend left] node {a} (p_0_q_0)
+	edge [bend left] node {b} (p_1_q_1)
+	(p_1_q_0)
+	edge [bend left] node {a} (p_1_q_1)
+	edge [bend left] node {b} (p_0_q_0)
+	(p_1_q_1)
+	edge [bend left] node {a} (p_1_q_0)
+	edge [bend left] node {b} (p_0_q_1);
+
+
+\end{tikzpicture}
 
 \end{document}
