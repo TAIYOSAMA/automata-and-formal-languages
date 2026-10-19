@@ -1,0 +1,23 @@
+\section{\( L_5 = \{ w \in \Sigma ^ * \mid \lvert w\rvert = 3k, k \in \mathbb{N}\} \)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.2,
+	transform shape
+	]
+
+	\node[state, initial, initial above, accepting] (q_0) at (150:2cm) {$q_0$};
+	\node[state] (q_1) at (30:2cm) {$q_1$};
+	\node[state] (q_2) at (270:2cm) {$q_2$};
+
+	\path[->]
+	(q_0) edge node {a,b} (q_1)
+	(q_1) edge node {a,b} (q_2)
+	(q_2) edge node {a,b} (q_0);
+
+\end{tikzpicture}

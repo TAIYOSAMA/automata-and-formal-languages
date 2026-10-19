@@ -1,0 +1,36 @@
+\section{\(L_{14} = \{\mathsf{aab}\}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=1.5cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.2,
+	transform shape
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state] (q_2) [right=of q_1] {$q_2$};
+	\node[state, accepting] (q_3) [right=of q_2] {$q_3$};
+	\node[state] (q_rej) [below=of q_3] {$q_{rej}$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge [bend right] node {b} (q_rej)
+	(q_1)
+	edge node {a} (q_2)
+	edge [bend right] node {b} (q_rej)
+	(q_2)
+	edge node {b} (q_3)
+	edge [bend right] node {a} (q_rej)
+	(q_3)
+	edge node {a,b} (q_rej)
+	(q_rej)
+	edge [loop right] node {a,b} ();
+
+\end{tikzpicture}

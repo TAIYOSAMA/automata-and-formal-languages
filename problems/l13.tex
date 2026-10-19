@@ -1,0 +1,44 @@
+\section{\( L_{13} = \{\mathsf{a}^i\mathsf{b}^j \mid i + j \ge 3\}\)}
+\begin{tikzpicture}[
+	->,
+	>={Stealth[round]},
+	initial text=,
+	auto,
+	node distance=1.5cm,
+	shorten >=1px,
+	semithick,
+	inner sep=4px,
+	scale=1.2,
+	transform shape
+	]
+
+	\node[state, initial] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state] (q_2) [right=of q_1] {$q_2$};
+	\node[state] (q_3) [below=of q_0] {$q_3$};
+	\node[state] (q_4) [right=of q_3] {$q_4$};
+	\node[state, accepting] (q_5) [right=of q_4] {$q_5$};
+	\node[state] (q_rej) [below=of q_4] {$q_{rej}$};
+
+	\path[->]
+	(q_0)
+	edge node {a} (q_1)
+	edge node {b} (q_3)
+	(q_1)
+	edge node {a} (q_2)
+	edge node {b} (q_4)
+	(q_2)
+	edge node {a,b} (q_5)
+	(q_3)
+	edge node {a} (q_rej)
+	edge node {b} (q_4)
+	(q_4)
+	edge node {a} (q_rej)
+	edge node {b} (q_5)
+	(q_5)
+	edge node {a} (q_rej)
+	edge [loop right] node {b} ()
+	(q_rej)
+	edge [loop below] node {a,b} ();
+
+\end{tikzpicture}
