@@ -15,27 +15,32 @@
 	\node[state, initial] (q_0) {$q_0$};
 	\node[state] (q_1) [right=of q_0] {$q_1$};
 	\node[state] (q_2) [right=of q_1] {$q_2$};
-	\node[state] (q_3) [below=of q_0] {$q_3$};
-	\node[state] (q_4) [right=of q_3] {$q_4$};
-	\node[state, accepting] (q_5) [right=of q_4] {$q_5$};
-	\node[state] (q_rej) [below=of q_4] {$q_{rej}$};
+	\node[state, accepting] (q_3) [right=of q_2] {$q_3$};
+	\node[state] (q_4) [below=of q_0] {$q_4$};
+	\node[state] (q_5) [right=of q_4] {$q_5$};
+	\node[state, accepting] (q_6) [right=of q_5] {$q_6$};
+	\node[state] (q_rej) [below=of q_5] {$q_{rej}$};
 
 	\path[->]
 	(q_0)
 	edge node {a} (q_1)
-	edge node {b} (q_3)
+	edge node {b} (q_4)
 	(q_1)
 	edge node {a} (q_2)
-	edge node {b} (q_4)
+	edge node {b} (q_5)
 	(q_2)
-	edge node {a,b} (q_5)
+	edge node {a} (q_3)
+	edge node {b} (q_6)
 	(q_3)
-	edge node {a} (q_rej)
-	edge node {b} (q_4)
+	edge [loop right] node {a} ()
+	edge node {b} (q_6)
 	(q_4)
 	edge node {a} (q_rej)
 	edge node {b} (q_5)
 	(q_5)
+	edge node {a} (q_rej)
+	edge node {b} (q_6)
+	(q_6)
 	edge node {a} (q_rej)
 	edge [loop right] node {b} ()
 	(q_rej)
