@@ -9,18 +9,7 @@ q_0,
 \right)
 \)
 
-\begin{tikzpicture}[
-	->,
-	>={Stealth[round]},
-	initial text=,
-	auto,
-	node distance=2cm,
-	shorten >=1px,
-	semithick,
-	inner sep=4px,
-	scale=1.2,
-	transform shape
-	]
+\begin{tikzpicture}[ automaton ]
 
 	\node[state, initial] (p_0_q_0) {$p_0,q_0$};
 	\node[state] (p_0_q_1) [right=of p_0_q_0] {$p_0,q_1$};

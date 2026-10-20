@@ -9,16 +9,7 @@ q_0,
 \right)
 \)
 
-\begin{tikzpicture}[
-	->,
-	>={Stealth[round]},
-	initial text=,
-	auto,
-	node distance=1.5cm,
-	shorten >=1px,
-	semithick,
-	inner sep=4px,
-	]
+\begin{tikzpicture}[ automaton ]
 
 	\node[state, initial, initial above] (q_0) {$q_0$};
 	\node[state] (q_1) [right=of q_0] {$q_1$};
