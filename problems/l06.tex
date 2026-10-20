@@ -1,18 +1,26 @@
 \section{\( L_6 = \{ \mathsf{aab}v \mid v \in \Sigma ^ * \}\)}
+\(
+M = \left(
+\{ q_0, q_1, q_2, q_3, q_{rej} \},
+\Sigma,
+\delta,
+q_0,
+\{q_3\}
+\right)
+\)
+
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
 	initial text=,
 	auto,
-	node distance=2cm,
+	node distance=1.5cm,
 	shorten >=1px,
 	semithick,
 	inner sep=4px,
-	scale=1.2,
-	transform shape
 	]
 
-	\node[state, initial] (q_0) {$q_0$};
+	\node[state, initial, initial above] (q_0) {$q_0$};
 	\node[state] (q_1) [right=of q_0] {$q_1$};
 	\node[state] (q_2) [right=of q_1] {$q_2$};
 	\node[state, accepting] (q_3) [right=of q_2] {$q_3$};

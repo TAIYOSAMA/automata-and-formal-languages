@@ -1,4 +1,14 @@
 \section{\( L_3 = \{ w \in \Sigma ^ * \mid \langle w\rangle_a = 3k, k \in \mathbb{N}\} \)}
+\(
+M = \left(
+\{ q_0, q_1, q_2 \},
+\Sigma,
+\delta,
+q_0,
+\{q_0\}
+\right)
+\)
+
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
@@ -7,13 +17,11 @@
 	shorten >=1px,
 	semithick,
 	inner sep=4px,
-	scale=1.2,
-	transform shape
 	]
 
-	\node[state, initial, initial above, accepting] (q_0) at (150:2cm) {$q_0$};
-	\node[state] (q_1) at (30:2cm) {$q_1$};
-	\node[state] (q_2) at (270:2cm) {$q_2$};
+	\node[state, initial, initial above, accepting] (q_0) at (150:1.5cm) {$q_0$};
+	\node[state] (q_1) at (30:1.5cm) {$q_1$};
+	\node[state] (q_2) at (270:1.5cm) {$q_2$};
 
 	\path[->]
 	(q_0)
@@ -24,6 +32,6 @@
 	edge [loop right] node {b} ()
 	(q_2)
 	edge node {a} (q_0)
-	edge [loop below] node {b} ();
+	edge [loop right] node {b} ();
 
 \end{tikzpicture}

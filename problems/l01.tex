@@ -1,15 +1,23 @@
 \section{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N}\} \)}
+\(
+M = \left(
+\{ q_0, q_1 \},
+\Sigma,
+\delta,
+q_0,
+\{q_0\}
+\right)
+\)
+
 \begin{tikzpicture}[
 	->,
 	>={Stealth[round]},
 	initial text=,
 	auto,
-	node distance=2cm,
+	node distance=1.5cm,
 	shorten >=1px,
 	semithick,
 	inner sep=4px,
-	scale=1.2,
-	transform shape
 	]
 
 	\node[state, initial, initial above, accepting] (q_0) {$q_0$};
