@@ -1,27 +1,26 @@
-\begin{minipage}{\linewidth}
-	\section{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N}\} \)}
-	\(
-	M = \left(
-	\{ q_0, q_1 \},
-	\Sigma,
-	\delta,
-	q_0,
-	\{q_0\}
-	\right)
-	\)
+\section{\( L_1 = \{w \in \Sigma ^ * \mid \langle w\rangle_a = 2k, k \in \mathbb{N}\} \)}
+\(
+M = \left(
+\{ q_0, q_1 \},
+\Sigma,
+\delta,
+q_0,
+\{q_0\}
+\right)
+\)
 
-	\begin{tikzpicture}[ automaton ]
+\problemspacing
+\begin{tikzpicture}[ automaton ]
 
-		\node[state, initial, initial above, accepting] (q_0) {$q_0$};
-		\node[state] (q_1) [right=of q_0] {$q_1$};
+	\node[state, initial, initial above, accepting] (q_0) {$q_0$};
+	\node[state] (q_1) [right=of q_0] {$q_1$};
 
-		\path[->]
-		(q_0)
-		edge [bend left] node {a} (q_1)
-		edge [loop left] node {b} ()
-		(q_1)
-		edge [bend left] node {a} (q_0)
-		edge [loop right] node {b} ();
+	\path[->]
+	(q_0)
+	edge [bend left] node {a} (q_1)
+	edge [loop left] node {b} ()
+	(q_1)
+	edge [bend left] node {a} (q_0)
+	edge [loop right] node {b} ();
 
-	\end{tikzpicture}
-\end{minipage}
+\end{tikzpicture}
